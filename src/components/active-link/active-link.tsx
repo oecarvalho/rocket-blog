@@ -7,15 +7,17 @@ type ActiveLinkProps = {
 } & LinkProps;
 
 export const ActiveLink = ({ children, href, ...rest }: ActiveLinkProps) => {
-  const router = useRouter();
-  const isCurrentPath =
-    router.asPath === href ||
-    router.asPath === rest.as ||
-    router.asPath.startsWith(String(rest.as));
+  const { asPath } = useRouter();
+
+  // Verifica se o link é a home (exato) ou se faz parte do caminho atual
+  const isCurrentPath = 
+    asPath === href || 
+    (href !== '/' && asPath.startsWith(String(href)));
 
   return (
     <Link
       href={href}
+      {...rest}
       className={cn(
         'text-sm font-medium transition-colors hover:text-blue-500',
         isCurrentPath ? 'text-blue-500' : 'text-muted-foreground'
