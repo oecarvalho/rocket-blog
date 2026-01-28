@@ -11,7 +11,7 @@ export const HeroSection = () => {
                 <div className="flex flex-col items-center justify-center gap-4 md:items-start lg:items-start">
                     <h1 className="text-gray-100 text-heading-hg">Venda seus produtos como afiliado em um único lugar</h1>
 
-                    <div className="flex flex-col items-center justify-center gap-4 md: items-start lg:items-start">
+                    <div className="flex flex-col items-center justify-center gap-4 md:items-start lg:items-start">
                         <div>
                             <div className="flex items-center gap-2">
                                 <Clock className="text-cyan-100 h-4 w-4" />
